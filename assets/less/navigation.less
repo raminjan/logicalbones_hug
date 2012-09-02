@@ -1,0 +1,106 @@
+/*--------------------------------------------------------------
+4.0 - Navigation
+--------------------------------------------------------------*/
+a {
+    color: @linkColor;
+}
+a:visited {
+    color: @linkVisitedColor;
+}
+a:hover {
+    color: @linkHoverColor;
+}
+#top-nav {
+}
+.skip-link,
+.assistive-text {
+	display: none;
+}
+nav#top-nav {
+	display: inline-block;
+	margin-top: 1px;
+	margin-top: 0.1rem;
+	.font-size-rems(14);
+	font-family : @navigationFont;
+	background : @navigationBackgroundColor;
+}
+nav#top-nav ul {
+	margin: 0;
+	text-indent: 0;
+}
+nav#top-nav li ul li {
+}
+nav#top-nav li a,
+nav#top-nav li {
+	display: inline-block;
+	text-decoration: none;
+	float: right;
+}
+nav#top-nav li a {
+}
+nav#top-nav li {
+	padding: 5px 20px;
+	padding: 0.5rem 2rem;
+	position: relative;
+	margin: 0;
+	list-style: none;
+}
+nav#top-nav li:last-child {
+	border-right: none;
+}
+nav#top-nav li a {
+}
+nav#top-nav li a:hover,nav#top-nav li.current-menu-item a {
+}
+nav#top-nav li ul {
+	display: none;
+	position: absolute;
+	top: 100%;
+	margin: 0;
+	z-index: 1;
+	background: #eee;
+}
+nav#top-nav li:hover ul {
+	display: block;
+}
+nav#top-nav li ul li,
+nav#top-nav li ul li a {
+	text-align: left;
+}
+nav#top-nav li ul li a {
+	display: block;
+	width: 100px;
+}
+nav#top-nav li ul li {
+}
+nav[role="navigation"].main-small-navigation {
+	text-align: left;
+}
+nav[role="navigation"] li a {
+	padding: 10px 0;
+	line-height: 1.2;
+}
+nav#bottom-nav ul {
+	margin: 0;
+	padding: 0;
+}
+nav#bottom-nav ul li {
+	list-style: none;
+	float: right;
+	margin: 0 0 0 30px;
+	margin: 0 0 0 3rem;
+}
+nav#bottom-nav ul li a,nav#bottom-nav ul li a:visited {
+}
+#nav-below {
+	margin: 10px 0 20px 0;
+	margin: 1rem 0 2rem 0;
+}
+select.mobileMenu {
+	width: 100%;
+}
+.assistive-text {
+	position: absolute!important;
+	clip: rect(1px 1px 1px 1px);/* IE6,IE7 */
+	clip:rect(1px,1px,1px,1px);
+}
