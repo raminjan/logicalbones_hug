@@ -66,7 +66,7 @@ function logicalboneshug_load_scripts() {
 	/* font awesome is rolled into Logical Bones */
 	wp_enqueue_style( 'font-awesome',  get_template_directory_uri() . '/assets/css/font-awesome.css', array());
 	
-	wp_enqueue_script('modernizr', get_template_directory_uri() . '/assets/scripts/modernizr.js', array("jquery"), '2.0');
+	wp_enqueue_script('modernizr', get_template_directory_uri() . '/assets/scripts/modernizr-2.5.3-min.js', array("jquery"), '2.0');
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
