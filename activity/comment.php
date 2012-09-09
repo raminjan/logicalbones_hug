@@ -6,8 +6,8 @@
  * This template is used by bp_activity_comments() functions to show
  * each activity.
  *
- * @package BuddyPress
- * @subpackage bp-default
+ * @package logicalbones
+ * @since logicalbones 1.0
  */
 
 ?>

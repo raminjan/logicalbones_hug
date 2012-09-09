@@ -1,7 +1,8 @@
 <?php get_header( 'buddypress' ); ?>
 
-	<div id="content">
-		<div class="padder">
+	
+	<div id="primary" class="main-content">
+	<div id="content" class="clearfix" role="main">
 			<?php if ( bp_has_groups() ) : while ( bp_groups() ) : bp_the_group(); ?>
 
 			<?php do_action( 'bp_before_group_plugin_template' ); ?>
@@ -33,7 +34,7 @@
 
 			<?php endwhile; endif; ?>
 
-		</div><!-- .padder -->
+		</div>
 	</div><!-- #content -->
 
 	<?php get_sidebar( 'buddypress' ); ?>

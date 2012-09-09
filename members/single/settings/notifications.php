@@ -3,15 +3,15 @@
 /**
  * BuddyPress Notification Settings
  *
- * @package BuddyPress
- * @subpackage bp-default
+ * @package logicalbones
+ * @since logicalbones 1.0
  */
 
 get_header( 'buddypress' ); ?>
 
-	<div id="content">
-		<div class="padder">
-
+	
+	<div id="primary" class="main-content">
+	<div id="content" class="clearfix" role="main">
 			<?php do_action( 'bp_before_member_settings_template' ); ?>
 
 			<div id="item-header">
@@ -73,7 +73,7 @@ get_header( 'buddypress' ); ?>
 
 			<?php do_action( 'bp_after_member_settings_template' ); ?>
 
-		</div><!-- .padder -->
+		</div>
 	</div><!-- #content -->
 
 <?php get_sidebar( 'buddypress' ); ?>

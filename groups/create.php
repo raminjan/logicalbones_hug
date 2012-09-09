@@ -3,14 +3,15 @@
 /**
  * BuddyPress - Create Group
  *
- * @package BuddyPress
- * @subpackage bp-default
+ * @package logicalbones
+ * @since logicalbones 1.0
  */
 
 get_header( 'buddypress' ); ?>
 
-	<div id="content">
-		<div class="padder">
+	
+	<div id="primary" class="main-content">
+	<div id="content" class="clearfix" role="main">
 		
 		<?php do_action( 'bp_before_create_group_content_template' ); ?>
 
@@ -308,7 +309,7 @@ get_header( 'buddypress' ); ?>
 		
 		<?php do_action( 'bp_after_create_group_content_template' ); ?>
 
-		</div><!-- .padder -->
+		</div>
 	</div><!-- #content -->
 
 <?php get_sidebar( 'buddypress' ); ?>

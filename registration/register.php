@@ -1,7 +1,8 @@
 <?php get_header( 'buddypress' ); ?>
 
-	<div id="content">
-		<div class="padder">
+	
+	<div id="primary" class="main-content">
+	<div id="content" class="clearfix" role="main">
 
 		<?php do_action( 'bp_before_register_page' ); ?>
 
@@ -272,7 +273,7 @@
 
 		<?php do_action( 'bp_after_register_page' ); ?>
 
-		</div><!-- .padder -->
+		</div>
 	</div><!-- #content -->
 
 	<?php get_sidebar( 'buddypress' ); ?>

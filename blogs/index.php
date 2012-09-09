@@ -3,16 +3,17 @@
 /**
  * BuddyPress - Blogs Directory
  *
- * @package BuddyPress
- * @subpackage bp-default
+ * @package logicalbones
+ * @since logicalbones 1.0
  */
 
 get_header( 'buddypress' ); ?>
 
 	<?php do_action( 'bp_before_directory_blogs_page' ); ?>
 
-	<div id="content">
-		<div class="padder">
+	
+	<div id="primary" class="main-content">
+	<div id="content" class="clearfix" role="main">
 
 		<?php do_action( 'bp_before_directory_blogs' ); ?>
 
@@ -79,7 +80,7 @@ get_header( 'buddypress' ); ?>
 
 		<?php do_action( 'bp_after_directory_blogs' ); ?>
 
-		</div><!-- .padder -->
+		</div>
 	</div><!-- #content -->
 
 	<?php do_action( 'bp_after_directory_blogs_page' ); ?>

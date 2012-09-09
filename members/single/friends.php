@@ -3,8 +3,8 @@
 /**
  * BuddyPress - Users Friends
  *
- * @package BuddyPress
- * @subpackage bp-default
+ * @package logicalbones
+ * @since logicalbones 1.0
  */
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Sidebar
+ * Sidebar BuddyPress
  *
  * @package logicalboneshug
  * @since logicalboneshug 1.0

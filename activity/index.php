@@ -3,16 +3,15 @@
 /**
  * Template Name: BuddyPress - Activity Directory
  *
- * @package BuddyPress
- * @subpackage Theme
+ * @package logicalbones
+ * @since logicalbones 1.0
  */
 
 get_header( 'buddypress' ); ?>
 
 	<?php do_action( 'bp_before_directory_activity_page' ); ?>
-
-	<div id="content">
-		<div class="padder">
+	<div id="primary" class="main-content">
+	<div id="content" class="clearfix" role="main">
 
 			<?php do_action( 'bp_before_directory_activity' ); ?>
 
@@ -146,7 +145,7 @@ get_header( 'buddypress' ); ?>
 
 			<?php do_action( 'bp_after_directory_activity' ); ?>
 
-		</div><!-- .padder -->
+		</div>
 	</div><!-- #content -->
 
 	<?php do_action( 'bp_after_directory_activity_page' ); ?>
