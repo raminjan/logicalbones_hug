@@ -1,84 +1,5 @@
 <?php
 
-// If BuddyPress is not activated, switch back to the default WP theme and bail out
-if ( ! function_exists( 'bp_is_active' ) ) {
-	switch_theme( WP_DEFAULT_THEME, WP_DEFAULT_THEME );
-	return;
-}
-
-if ( ! function_exists( 'bp_dtheme_setup' ) ) :
-function bp_dtheme_setup() {
-	// Load the AJAX functions for the theme
-	require( TEMPLATEPATH . 'assets/scripts/ajax.php' );
-
-	// Add BuddyPress elements
-	add_theme_support( 'buddypress' );
-	add_theme_support( 'bp-default-responsive' );
-
-	if ( !is_admin() ) {
-		// Register buttons for the relevant component templates
-		// Friends button
-		if ( bp_is_active( 'friends' ) )
-			add_action( 'bp_member_header_actions',    'bp_add_friend_button',           5 );
-
-		// Activity button
-		if ( bp_is_active( 'activity' ) )
-			add_action( 'bp_member_header_actions',    'bp_send_public_message_button',  20 );
-
-		// Messages button
-		if ( bp_is_active( 'messages' ) )
-			add_action( 'bp_member_header_actions',    'bp_send_private_message_button', 20 );
-
-		// Group buttons
-		if ( bp_is_active( 'groups' ) ) {
-			add_action( 'bp_group_header_actions',     'bp_group_join_button',           5 );
-			add_action( 'bp_group_header_actions',     'bp_group_new_topic_button',      20 );
-			add_action( 'bp_directory_groups_actions', 'bp_group_join_button' );
-		}
-
-		// Blog button
-		if ( bp_is_active( 'blogs' ) )
-			add_action( 'bp_directory_blogs_actions',  'bp_blogs_visit_blog_button' );
-	}
-}
-add_action( 'after_setup_theme', 'bp_dtheme_setup' );
-endif;
-
-if ( !function_exists( 'bp_dtheme_enqueue_scripts' ) ) :
-/**
- * Enqueue theme javascript safely
- *
- * @see http://codex.wordpress.org/Function_Reference/wp_enqueue_script
- * @since BuddyPress (1.5)
- */
-function bp_dtheme_enqueue_scripts() {
-
-	// Enqueue the global JS - Ajax will not work without it
-	wp_enqueue_script( 'dtheme-ajax-js', get_template_directory_uri() . '/assets/scripts/global.js', array( 'jquery' ), bp_get_version() );
-
-	// Add words that we need to use in JS to the end of the page so they can be translated and still used.
-	$params = array(
-		'my_favs'           => __( 'My Favorites', 'buddypress' ),
-		'accepted'          => __( 'Accepted', 'buddypress' ),
-		'rejected'          => __( 'Rejected', 'buddypress' ),
-		'show_all_comments' => __( 'Show all comments for this thread', 'buddypress' ),
-		'show_all'          => __( 'Show all', 'buddypress' ),
-		'comments'          => __( 'comments', 'buddypress' ),
-		'close'             => __( 'Close', 'buddypress' ),
-		'view'              => __( 'View', 'buddypress' ),
-		'mark_as_fav'	    => __( 'Favorite', 'buddypress' ),
-		'remove_fav'	    => __( 'Remove Favorite', 'buddypress' )
-	);
-	wp_localize_script( 'dtheme-ajax-js', 'BP_DTheme', $params );
-
-	// Maybe enqueue comment reply JS
-	if ( is_singular() && bp_is_blog_page() && get_option( 'thread_comments' ) )
-		wp_enqueue_script( 'comment-reply' );
-}
-add_action( 'wp_enqueue_scripts', 'bp_dtheme_enqueue_scripts' );
-endif;
-
-
 if ( !function_exists( 'bp_dtheme_page_on_front' ) ) :
 /**
  * Return the ID of a page set as the home page.
@@ -248,40 +169,8 @@ function bp_dtheme_sidebar_login_redirect_to() {
 add_action( 'bp_sidebar_login_form', 'bp_dtheme_sidebar_login_redirect_to' );
 endif;
 
-if ( !function_exists( 'bp_dtheme_content_nav' ) ) :
-/**
- * Display navigation to next/previous pages when applicable
- *
- * @global WP_Query $wp_query
- * @param string $nav_id DOM ID for this navigation
- * @since BuddyPress (1.5)
- */
-function bp_dtheme_content_nav( $nav_id ) {
-	global $wp_query;
-
-	if ( !empty( $wp_query->max_num_pages ) && $wp_query->max_num_pages > 1 ) : ?>
-
-		<div id="<?php echo $nav_id; ?>" class="navigation">
-			<div class="alignleft"><?php next_posts_link( __( '&larr; Previous Entries', 'buddypress' ) ); ?></div>
-			<div class="alignright"><?php previous_posts_link( __( 'Next Entries &rarr;', 'buddypress' ) ); ?></div>
-		</div><!-- #<?php echo $nav_id; ?> -->
-
-	<?php endif;
-}
-endif;
-
 /**
  * Adds the no-js class to the body tag.
- *
- * This function ensures that the <body> element will have the 'no-js' class by default. If you're
- * using JavaScript for some visual functionality in your theme, and you want to provide noscript
- * support, apply those styles to body.no-js.
- *
- * The no-js class is removed by the JavaScript created in bp_dtheme_remove_nojs_body_class().
- *
- * @package BuddyPress
- * @since BuddyPress (1.5).1
- * @see bp_dtheme_remove_nojs_body_class()
  */
 function bp_dtheme_add_nojs_body_class( $classes ) {
 	$classes[] = 'no-js';

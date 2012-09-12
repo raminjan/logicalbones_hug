@@ -6,7 +6,10 @@
  * @since logicalboneshug 1.0
  */
 /* logicalboneshug setup functions */
-
+if ( ! function_exists( 'bp_is_active' ) ) {
+	switch_theme( WP_DEFAULT_THEME, WP_DEFAULT_THEME );
+	return;
+}
 
 if ( ! isset( $content_width ) ) {
 	$content_width = 640;
@@ -27,9 +30,15 @@ function logicalboneshug_build() {
 
 	require( get_template_directory() . '/inc/buddypress-functions.php' );
 
+	require( TEMPLATEPATH . 'assets/scripts/ajax.php' );
+
 	// Language set up
 	load_theme_textdomain('logicalboneshug', get_template_directory() . '/languages/');
 	
+	add_theme_support( 'buddypress' );
+	
+	add_theme_support( 'bp-default-responsive' );
+
 	// Add RSS feed links
 	add_theme_support('automatic-feed-links');
 
@@ -49,6 +58,32 @@ function logicalboneshug_build() {
 	
 	// Add post format support
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote' ) );
+
+	if ( !is_admin() ) {
+		// Register buttons for the relevant component templates
+		// Friends button
+		if ( bp_is_active( 'friends' ) )
+			add_action( 'bp_member_header_actions',    'bp_add_friend_button',           5 );
+
+		// Activity button
+		if ( bp_is_active( 'activity' ) )
+			add_action( 'bp_member_header_actions',    'bp_send_public_message_button',  20 );
+
+		// Messages button
+		if ( bp_is_active( 'messages' ) )
+			add_action( 'bp_member_header_actions',    'bp_send_private_message_button', 20 );
+
+		// Group buttons
+		if ( bp_is_active( 'groups' ) ) {
+			add_action( 'bp_group_header_actions',     'bp_group_join_button',           5 );
+			add_action( 'bp_group_header_actions',     'bp_group_new_topic_button',      20 );
+			add_action( 'bp_directory_groups_actions', 'bp_group_join_button' );
+		}
+
+		// Blog button
+		if ( bp_is_active( 'blogs' ) )
+			add_action( 'bp_directory_blogs_actions',  'bp_blogs_visit_blog_button' );
+	}
 }
 endif;
 
@@ -71,6 +106,24 @@ function logicalboneshug_load_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	// Enqueue the global JS - Ajax will not work without it
+	wp_enqueue_script( 'dtheme-ajax-js', get_template_directory_uri() . '/assets/scripts/global.js', array( 'jquery' ), bp_get_version() );
+
+	// Add words that we need to use in JS to the end of the page so they can be translated and still used.
+	$params = array(
+		'my_favs'           => __( 'My Favorites', 'buddypress' ),
+		'accepted'          => __( 'Accepted', 'buddypress' ),
+		'rejected'          => __( 'Rejected', 'buddypress' ),
+		'show_all_comments' => __( 'Show all comments for this thread', 'buddypress' ),
+		'show_all'          => __( 'Show all', 'buddypress' ),
+		'comments'          => __( 'comments', 'buddypress' ),
+		'close'             => __( 'Close', 'buddypress' ),
+		'view'              => __( 'View', 'buddypress' ),
+		'mark_as_fav'	    => __( 'Favorite', 'buddypress' ),
+		'remove_fav'	    => __( 'Remove Favorite', 'buddypress' )
+	);
+	wp_localize_script( 'dtheme-ajax-js', 'BP_DTheme', $params );
 	
 }
 endif;
