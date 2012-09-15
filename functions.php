@@ -21,16 +21,12 @@ if ( ! function_exists( 'logicalboneshug_build' ) ) :
 function logicalboneshug_build() {
 	
 	// incs incoming
+	require( get_template_directory() . '/assets/scripts/ajax.php' );
+
 	// template contents and structure functions
 	require( get_template_directory() . '/inc/template-functions.php' );
 	// snippets and 'doing things' collection
 	require( get_template_directory() . '/inc/logical-snippets.php' );
-	// customisation and look = custom-header.php (comment out to not have a custom header)
-	require( get_template_directory() . '/inc/custom-header.php' );
-
-	require( get_template_directory() . '/inc/buddypress-functions.php' );
-
-	require( TEMPLATEPATH . 'assets/scripts/ajax.php' );
 
 	// Language set up
 	load_theme_textdomain('logicalboneshug', get_template_directory() . '/languages/');
@@ -84,6 +80,8 @@ function logicalboneshug_build() {
 		if ( bp_is_active( 'blogs' ) )
 			add_action( 'bp_directory_blogs_actions',  'bp_blogs_visit_blog_button' );
 	}
+	
+	require( get_template_directory() . '/inc/buddypress-functions.php' );
 }
 endif;
 

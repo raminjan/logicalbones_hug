@@ -13,7 +13,7 @@
 	padding-bottom: 0;
 }
 form#whats-new-form h5 {
-	.font-size(12);
+	.font-size-rems(12);
 	margin: 0;
 	margin-left: 76px;
 	padding: 0 0 3px 0;
@@ -26,7 +26,7 @@ form#whats-new-form #whats-new-content {
 	padding-left: 22px;
 }
 form#whats-new-form textarea {
-	.font-size(14);
+	.font-size-rems(14);
 	height: 20px;
 	padding: 6px;
 	width: 98%;
@@ -77,7 +77,7 @@ body.activity-permalink ul.activity-list li.has-comments {
 	padding-bottom: 0;
 }
 .activity-list li.mini {
-	.font-size(11);
+	.font-size-rems(11);
 	min-height: 35px;
 	padding: 15px 0 0 0;
 	position: relative;
@@ -105,14 +105,14 @@ body.activity-permalink .activity-list > li:first-child {
 }
 .activity-list li.mini .activity-comments {
 	clear: both;
-	.font-size(12);
+	.font-size-rems(12);
 }
 body.activity-permalink li.mini .activity-meta {
 	margin-top: 4px;
 }
 .activity-list li .activity-inreplyto {
 	background: url( ../images/replyto_arrow.gif ) 7px 0 no-repeat;
-	.font-size(11);
+	.font-size-rems(11);
 	margin-left: 5px;
 	margin-top: 5px;
 	padding-left: 25px;
@@ -138,7 +138,7 @@ body.activity-permalink .activity-list li .activity-content {
 	background: #fff;
 	border-bottom: @solidBorder;
 	border-right: @solidBorder;
-	.font-size(16);
+	.font-size-rems(16);
 	line-height: 150%;
 	min-height: 35px;
 	margin-left: 185px;
@@ -153,7 +153,7 @@ body.activity-permalink .activity-list li .activity-header > p {
 }
 .activity-list .activity-content .activity-header,
 .activity-list .activity-content .comment-header {
-	.font-size(11);
+	.font-size-rems(11);
 	line-height: 220%;
 }
 .activity-header {
@@ -170,7 +170,7 @@ body.activity-permalink .activity-list li .activity-header > p {
 }
 a.bp-secondary-action,
 span.highlight {
-	.font-size(11);
+	.font-size-rems(11);
 	padding: 0;
 	margin-right: 5px;
 	text-decoration: none;
@@ -213,7 +213,7 @@ body.activity-permalink .activity-content blockquote {
 	background: @grayLighter;
 	border-right: @solidBorder;
 	border-bottom: @solidBorder;
-	.font-size(12);
+	.font-size-rems(12);
 	margin: 15px 0;
 	padding: 10px 15px;
 	text-align: center;
@@ -243,15 +243,15 @@ a.activity-time-since:hover {
 }
 a.bp-primary-action,
 #reply-title small a {
-	.font-size(11);
+	.font-size-rems(11);
 	margin-right: 5px;
 	text-decoration: none;
 }
 a.bp-primary-action span,
 #reply-title small a span {
 	background: @grayLight;
-	color: @ehite;
-	.font-size(14);
+	color: @white;
+	.font-size-rems(14);
 	margin-left: 2px;
 	padding: 0 5px;
 }
@@ -319,7 +319,7 @@ div.activity-comments div.acomment-avatar img {
 	width: 25px;
 }
 div.activity-comments div.acomment-content {
-	.font-size(11);
+	.font-size-rems(11);
 	margin: 5px 0 0 40px;
 }
 div.acomment-content .time-since,
@@ -328,10 +328,10 @@ div.acomment-content .comment-header {
 	display: none;
 }
 body.activity-permalink div.activity-comments div.acomment-content {
-	.font-size(14);
+	.font-size-rems(14);
 }
 div.activity-comments div.acomment-meta {
-	.font-size(11);
+	.font-size-rems(11);
 }
 div.activity-comments form.ac-form {
 	background: @white;
@@ -369,7 +369,7 @@ div.activity-comments form textarea {
 	border: none;
 	color: @gray;
 	font-family: inherit;
-	.font-size(11);
+	.font-size-rems(11);
 	height: 60px;
 	padding: 0;
 	width: 100%;
@@ -385,7 +385,7 @@ div.ac-reply-avatar img {
 }
 div.activity-comments form div.ac-reply-content {
 	color: @gray;
-	.font-size(11);
+	.font-size-rems(11);
 	margin-left: 50px;
 	padding-left: 15px;
 }
@@ -435,7 +435,7 @@ div#message.updated {
 	clear: both;
 }
 div#message p {
-	.font-size(12);
+	.font-size-rems(12);
 	display: block;
 	padding: 10px 15px;
 }
@@ -488,7 +488,7 @@ ul.button-nav li.current a {
 	border-radius: 3px;
 	color: @grayLight;
 	font: inherit;
-	.font-size(14);
+	.font-size-rems(14);
 	padding: 6px;
 }
 .standard-form select {
@@ -506,7 +506,7 @@ ul.button-nav li.current a {
 .standard-form div.checkbox label,
 .standard-form div.radio label {
 	color: @gray;
-	.font-size(14);
+	.font-size-rems(14);
 	font-weight: normal;
 	margin: 5px 0 0 0;
 }
@@ -549,8 +549,8 @@ div#signup-avatar img {
 	width: 97.5%;
 }
 .standard-form p.description {
-	color: @Gray;
-	.font-size(11);
+	color: @gray;
+	.font-size-rems(11);
 	margin: 5px 0;
 }
 .standard-form div.submit {
@@ -761,7 +761,7 @@ div.topic-tags {
 }
 div.admin-links {
 	color: @grayLight;
-	.font-size(11);
+	.font-size-rems(11);
 	position: absolute;
 	top: 15px;
 	right: 25px;
@@ -776,7 +776,7 @@ div#topic-meta div.admin-links {
 	top: 0;
 }
 div#topic-meta h3 {
-	.font-size(20);
+	.font-size-rems(20);
 	margin: 5px 0;
 }
 div#new-topic-post {
@@ -821,7 +821,7 @@ table tr td.thread-info p {
 }
 table tr td.thread-info p.thread-excerpt {
 	color: @grayLight;
-	.font-size(11);
+	.font-size-rems(11);
 	margin-top: 3px;
 }
 div#sidebar table td,
@@ -855,7 +855,7 @@ table.forum {
 	width: auto;
 }
 table.forum tr.sticky td {
-	.font-size(12);
+	.font-size-rems(12);
 	background: @grayLighter;
 	border-top: @solidBorder;
 	border-bottom: @solidBorder;
@@ -868,7 +868,7 @@ table.forum tr.closed td.td-title {
 }
 table.forum td p.topic-text {
 	color: @grayLight;
-	.font-size(13);
+	.font-size-rems(13);
 }
 table.forum tr > td:first-child,
 table.forum tr > th:first-child {
@@ -887,13 +887,13 @@ table.forum td.td-title {
 	text-align: left;
 }
 table.forum tr td.td-title a.topic-title {
-	.font-size(12);
+	.font-size-rems(12);
 }
 table.forum td.td-freshness {
 	white-space: nowrap;
 }
 table.forum td.td-freshness span.time-since {
-	.font-size(11);
+	.font-size-rems(11);
 	color: @grayLight;
 }
 table.forum td img.avatar {
@@ -914,7 +914,7 @@ table.forum th#th-postcount {
 	width: 15%;
 }
 table.forum p.topic-meta {
-	.font-size(11);
+	.font-size-rems(11);
 	margin: 5px 0 0 0;
 }
 
@@ -926,14 +926,14 @@ table.forum p.topic-meta {
 }
 span.activity {
 	display: inline-block;
-	.font-size(11);
+	.font-size-rems(11);
 	opacity: 0.8;
 	padding: 1px 8px;
 }
 span.user-nicename {
-	color: @grauLight;
+	color: @grayLight;
 	display: inline-block;
-	.font-size(16);
+	.font-size-rems(16);
 	font-weight: bold;
 }
 span.activity,
@@ -977,14 +977,14 @@ div#item-header h2 {
 }
 div#item-header span.activity,
 div#item-header h2 span.highlight {
-	.font-size(11);
+	.font-size-rems(11);
 	font-weight: normal;
 	line-height: 170%;
 	margin-bottom: 7px;
 	vertical-align: middle;
 }
 div#item-header h2 span.highlight {
-	.font-size(16);
+	.font-size-rems(16);
 }
 div#item-header h2 span.highlight span {
 	background: #a1dcfa;
@@ -994,7 +994,7 @@ div#item-header h2 span.highlight span {
 	color: @white;
 	cursor: pointer;
 	font-weight: bold;
-	.font-size(11);
+	.font-size-rems(11);
 	margin-bottom: 2px;
 	padding: 1px 4px;
 	position: relative;
@@ -1003,7 +1003,7 @@ div#item-header h2 span.highlight span {
 	vertical-align: middle;
 }
 div#item-header div#item-meta {
-	.font-size(14);
+	.font-size-rems(14);
 	color: @grayLight;
 	overflow: hidden;
 	margin: 15px 0 5px 0;
@@ -1016,7 +1016,7 @@ div#item-header div#item-actions {
 	width: 20%;
 }
 div#item-header div#item-actions h3 {
-	.font-size(12);
+	.font-size-rems(12);
 	margin: 0 0 5px 0;
 }
 div#item-header ul {
@@ -1066,17 +1066,17 @@ ul.item-list li img.avatar {
 ul.item-list li div.item-title,
 ul.item-list li h4 {
 	font-weight: normal;
-	.font-size(14);
+	.font-size-rems(14);
 	margin: 0;
 	width: 75%;
 }
 ul.item-list li div.item-title span {
 	color: @grayLight;
-	.font-size(12);
+	.font-size-rems(12);
 }
 ul.item-list li div.item-desc {
 	color: @grayLight;
-	.font-size(11);
+	.font-size-rems(11);
 	margin: 10px 0 0 64px;
 	width: 50%;
 }
@@ -1088,12 +1088,12 @@ ul.item-list li div.action {
 }
 ul.item-list li div.meta {
 	color: @grayLight;
-	.font-size(11);
+	.font-size-rems(11);
 	margin-top: 10px;
 }
 ul.item-list li h5 span.small {
 	float: right;
-	.font-size(11);
+	.font-size-rems(11);
 	font-weight: normal;
 }
 div.item-list-tabs {
@@ -1142,7 +1142,7 @@ div.item-list-tabs ul li a span {
 	border-radius: 3px;
 	color: @white;
 	display: inline;
-	.font-size(11);
+	.font-size-rems(11);
 	margin-left: 2px;
 	padding: 1px 6px;
 }
@@ -1222,7 +1222,7 @@ div.item-list-tabs ul li a span.unread-count {
 }
 div.messages-options-nav {
 	background: #eee;
-	.font-size(11);
+	.font-size-rems(11);
 	margin: 0;
 	padding: 5px 15px;
 	text-align: right;
@@ -1243,7 +1243,7 @@ div#message-thread img.avatar {
 	vertical-align: middle;
 }
 div#message-thread strong {
-	.font-size(16);
+	.font-size-rems(16);
 	margin: 0;
 }
 div#message-thread strong a {
@@ -1300,7 +1300,7 @@ body.no-js .field-visibility-settings {
 }
 .field-visibility-settings-toggle a,
 .field-visibility-settings a {
-	.font-size(11);
+	.font-size-rems(11);
 }
 body.register div.page ul {
 	list-style: none;

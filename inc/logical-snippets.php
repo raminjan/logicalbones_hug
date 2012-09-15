@@ -19,15 +19,4 @@ function logicalboneshug_fallback_menu() {
 	echo '</ul>';
 };
 
-// Switch to mobile menu for devices
-function logicalboneshug_headadd(){
-    ?>
-	<script>
-		jQuery(document).ready(function(){
-				jQuery('.top_menu').mobileMenu();
-		});
-	</script>
- <?php 
-}
-add_action ('wp_head', "logicalboneshug_headadd");
 ?>
