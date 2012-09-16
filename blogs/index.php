@@ -84,6 +84,5 @@ get_header( 'logicalboneshug' ); ?>
 	</div><!-- #content -->
 
 	<?php do_action( 'bp_after_directory_blogs_page' ); ?>
-
-<?php get_sidebar( 'logicalboneshug' ); ?>
+<?php get_sidebar( 'buddypress' ); ?>
 <?php get_footer( 'logicalboneshug' ); ?>

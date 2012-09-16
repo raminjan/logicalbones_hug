@@ -160,6 +160,5 @@
 	</div><!-- #content -->
 
 	<?php do_action( 'bp_after_directory_forums_page' ); ?>
-
-<?php get_sidebar( 'logicalboneshug' ); ?>
+<?php get_sidebar( 'buddypress' ); ?>
 <?php get_footer( 'logicalboneshug' ); ?>

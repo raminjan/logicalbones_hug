@@ -77,6 +77,5 @@
 
 		</div>
 	</div><!-- #content -->
-
-<?php get_sidebar( 'logicalboneshug' ); ?>
+<?php get_sidebar( 'buddypress' ); ?>
 <?php get_footer( 'logicalboneshug' ); ?>
