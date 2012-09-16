@@ -6,7 +6,7 @@
 
 		<?php do_action( 'bp_before_activation_page' ); ?>
 
-		<div class="page" id="activate-page">
+		<div id="page" class="activate-page">
 
 			<?php if ( bp_account_was_activated() ) : ?>
 
