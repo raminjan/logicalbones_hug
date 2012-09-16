@@ -17,12 +17,12 @@
 
 			<li id="groups-order-select" class="last filter">
 
-				<label for="groups-sort-by"><?php _e( 'Order By:', 'buddypress' ); ?></label>
+				<label for="groups-sort-by"><?php _e( 'Order By:', 'logicalboneshug' ); ?></label>
 				<select id="groups-sort-by">
-					<option value="active"><?php _e( 'Last Active', 'buddypress' ); ?></option>
-					<option value="popular"><?php _e( 'Most Members', 'buddypress' ); ?></option>
-					<option value="newest"><?php _e( 'Newly Created', 'buddypress' ); ?></option>
-					<option value="alphabetical"><?php _e( 'Alphabetical', 'buddypress' ); ?></option>
+					<option value="active"><?php _e( 'Last Active', 'logicalboneshug' ); ?></option>
+					<option value="popular"><?php _e( 'Most Members', 'logicalboneshug' ); ?></option>
+					<option value="newest"><?php _e( 'Newly Created', 'logicalboneshug' ); ?></option>
+					<option value="alphabetical"><?php _e( 'Alphabetical', 'logicalboneshug' ); ?></option>
 
 					<?php do_action( 'bp_member_group_order_options' ); ?>
 

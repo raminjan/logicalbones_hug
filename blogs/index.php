@@ -7,7 +7,7 @@
  * @since logicalbones 1.0
  */
 
-get_header( 'buddypress' ); ?>
+get_header( 'logicalboneshug' ); ?>
 
 	<?php do_action( 'bp_before_directory_blogs_page' ); ?>
 
@@ -19,7 +19,7 @@ get_header( 'buddypress' ); ?>
 
 		<form action="" method="post" id="blogs-directory-form" class="dir-form">
 
-			<h3><?php _e( 'Site Directory', 'buddypress' ); ?><?php if ( is_user_logged_in() && bp_blog_signup_enabled() ) : ?> &nbsp;<a class="button" href="<?php echo bp_get_root_domain() . '/' . bp_get_blogs_root_slug() . '/create/' ?>"><?php _e( 'Create a Site', 'buddypress' ); ?></a><?php endif; ?></h3>
+			<h3><?php _e( 'Site Directory', 'logicalboneshug' ); ?><?php if ( is_user_logged_in() && bp_blog_signup_enabled() ) : ?> &nbsp;<a class="button" href="<?php echo bp_get_root_domain() . '/' . bp_get_blogs_root_slug() . '/create/' ?>"><?php _e( 'Create a Site', 'logicalboneshug' ); ?></a><?php endif; ?></h3>
 
 			<?php do_action( 'bp_before_directory_blogs_content' ); ?>
 
@@ -31,11 +31,11 @@ get_header( 'buddypress' ); ?>
 
 			<div class="item-list-tabs" role="navigation">
 				<ul>
-					<li class="selected" id="blogs-all"><a href="<?php bp_root_domain(); ?>/<?php bp_blogs_root_slug(); ?>"><?php printf( __( 'All Sites <span>%s</span>', 'buddypress' ), bp_get_total_blog_count() ); ?></a></li>
+					<li class="selected" id="blogs-all"><a href="<?php bp_root_domain(); ?>/<?php bp_blogs_root_slug(); ?>"><?php printf( __( 'All Sites <span>%s</span>', 'logicalboneshug' ), bp_get_total_blog_count() ); ?></a></li>
 
 					<?php if ( is_user_logged_in() && bp_get_total_blog_count_for_user( bp_loggedin_user_id() ) ) : ?>
 
-						<li id="blogs-personal"><a href="<?php echo bp_loggedin_user_domain() . bp_get_blogs_slug(); ?>"><?php printf( __( 'My Sites <span>%s</span>', 'buddypress' ), bp_get_total_blog_count_for_user( bp_loggedin_user_id() ) ); ?></a></li>
+						<li id="blogs-personal"><a href="<?php echo bp_loggedin_user_domain() . bp_get_blogs_slug(); ?>"><?php printf( __( 'My Sites <span>%s</span>', 'logicalboneshug' ), bp_get_total_blog_count_for_user( bp_loggedin_user_id() ) ); ?></a></li>
 
 					<?php endif; ?>
 
@@ -51,11 +51,11 @@ get_header( 'buddypress' ); ?>
 
 					<li id="blogs-order-select" class="last filter">
 
-						<label for="blogs-order-by"><?php _e( 'Order By:', 'buddypress' ); ?></label>
+						<label for="blogs-order-by"><?php _e( 'Order By:', 'logicalboneshug' ); ?></label>
 						<select id="blogs-order-by">
-							<option value="active"><?php _e( 'Last Active', 'buddypress' ); ?></option>
-							<option value="newest"><?php _e( 'Newest', 'buddypress' ); ?></option>
-							<option value="alphabetical"><?php _e( 'Alphabetical', 'buddypress' ); ?></option>
+							<option value="active"><?php _e( 'Last Active', 'logicalboneshug' ); ?></option>
+							<option value="newest"><?php _e( 'Newest', 'logicalboneshug' ); ?></option>
+							<option value="alphabetical"><?php _e( 'Alphabetical', 'logicalboneshug' ); ?></option>
 
 							<?php do_action( 'bp_blogs_directory_order_options' ); ?>
 
@@ -85,5 +85,5 @@ get_header( 'buddypress' ); ?>
 
 	<?php do_action( 'bp_after_directory_blogs_page' ); ?>
 
-<?php get_sidebar( 'buddypress' ); ?>
-<?php get_footer( 'buddypress' ); ?>
+<?php get_sidebar( 'logicalboneshug' ); ?>
+<?php get_footer( 'logicalboneshug' ); ?>

@@ -1,4 +1,4 @@
-<?php get_header( 'buddypress' ); ?>
+<?php get_header( 'logicalboneshug' ); ?>
 
 	
 	<div id="primary" class="main-content">
@@ -37,6 +37,6 @@
 		</div>
 	</div><!-- #content -->
 
-	<?php get_sidebar( 'buddypress' ); ?>
+	<?php get_sidebar( 'logicalboneshug' ); ?>
 
-<?php get_footer( 'buddypress' ); ?>
+<?php get_footer( 'logicalboneshug' ); ?>

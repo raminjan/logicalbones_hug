@@ -38,10 +38,10 @@
 <?php
 									if ( wp_attachment_is_image() ) :
 										$metadata = wp_get_attachment_metadata();
-										printf( __( 'Full size is %s pixels', 'buddypress' ),
+										printf( __( 'Full size is %s pixels', 'logicalboneshug' ),
 											sprintf( '<a href="%1$s" title="%2$s">%3$s &times; %4$s</a>',
 												wp_get_attachment_url(),
-												esc_attr( __( 'Link to full size image', 'buddypress' ) ),
+												esc_attr( __( 'Link to full size image', 'logicalboneshug' ) ),
 												$metadata['width'],
 												$metadata['height']
 											)

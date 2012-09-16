@@ -34,7 +34,7 @@
 		<?php if ( 'activity_comment' == bp_get_activity_type() ) : ?>
 
 			<div class="activity-inreplyto">
-				<strong><?php _e( 'In reply to: ', 'buddypress' ); ?></strong><?php bp_activity_parent_content(); ?> <a href="<?php bp_activity_thread_permalink(); ?>" class="view" title="<?php _e( 'View Thread / Permalink', 'buddypress' ); ?>"><?php _e( 'View', 'buddypress' ); ?></a>
+				<strong><?php _e( 'In reply to: ', 'logicalboneshug' ); ?></strong><?php bp_activity_parent_content(); ?> <a href="<?php bp_activity_thread_permalink(); ?>" class="view" title="<?php _e( 'View Thread / Permalink', 'logicalboneshug' ); ?>"><?php _e( 'View', 'logicalboneshug' ); ?></a>
 			</div>
 
 		<?php endif; ?>
@@ -57,7 +57,7 @@
 
 				<?php if ( bp_activity_can_comment() ) : ?>
 
-					<a href="<?php bp_get_activity_comment_link(); ?>" class="button acomment-reply bp-primary-action" id="acomment-comment-<?php bp_activity_id(); ?>"><?php printf( __( 'Comment <span>%s</span>', 'buddypress' ), bp_activity_get_comment_count() ); ?></a>
+					<a href="<?php bp_get_activity_comment_link(); ?>" class="button acomment-reply bp-primary-action" id="acomment-comment-<?php bp_activity_id(); ?>"><?php printf( __( 'Comment <span>%s</span>', 'logicalboneshug' ), bp_activity_get_comment_count() ); ?></a>
 
 				<?php endif; ?>
 
@@ -65,11 +65,11 @@
 
 					<?php if ( !bp_get_activity_is_favorite() ) : ?>
 
-						<a href="<?php bp_activity_favorite_link(); ?>" class="button fav bp-secondary-action" title="<?php esc_attr_e( 'Mark as Favorite', 'buddypress' ); ?>"><?php _e( 'Favorite', 'buddypress' ); ?></a>
+						<a href="<?php bp_activity_favorite_link(); ?>" class="button fav bp-secondary-action" title="<?php esc_attr_e( 'Mark as Favorite', 'logicalboneshug' ); ?>"><?php _e( 'Favorite', 'logicalboneshug' ); ?></a>
 
 					<?php else : ?>
 
-						<a href="<?php bp_activity_unfavorite_link(); ?>" class="button unfav bp-secondary-action" title="<?php esc_attr_e( 'Remove Favorite', 'buddypress' ); ?>"><?php _e( 'Remove Favorite', 'buddypress' ); ?></a>
+						<a href="<?php bp_activity_unfavorite_link(); ?>" class="button unfav bp-secondary-action" title="<?php esc_attr_e( 'Remove Favorite', 'logicalboneshug' ); ?>"><?php _e( 'Remove Favorite', 'logicalboneshug' ); ?></a>
 
 					<?php endif; ?>
 
@@ -101,7 +101,7 @@
 						<div class="ac-textarea">
 							<textarea id="ac-input-<?php bp_activity_id(); ?>" class="ac-input" name="ac_input_<?php bp_activity_id(); ?>"></textarea>
 						</div>
-						<input type="submit" name="ac_form_submit" value="<?php _e( 'Post', 'buddypress' ); ?>" /> &nbsp; <?php _e( 'or press esc to cancel.', 'buddypress' ); ?>
+						<input type="submit" name="ac_form_submit" value="<?php _e( 'Post', 'logicalboneshug' ); ?>" /> &nbsp; <?php _e( 'or press esc to cancel.', 'logicalboneshug' ); ?>
 						<input type="hidden" name="comment_form_id" value="<?php bp_activity_id(); ?>" />
 					</div>
 

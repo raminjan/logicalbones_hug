@@ -36,11 +36,11 @@ endif;
 
 	<?php if ( pings_open() && !comments_open() && ( is_single() || is_page() ) && post_type_supports( get_post_type(), 'comments' ) ) : ?>
 		<p class="nocomments comments-closed pings-open">
-			<?php printf( __( 'Comments are closed, but <a href="%1$s" title="Trackback URL for this post">trackbacks</a> and pingbacks are open.', 'buddypress' ), trackback_url( '0' ) ); ?>
+			<?php printf( __( 'Comments are closed, but <a href="%1$s" title="Trackback URL for this post">trackbacks</a> and pingbacks are open.', 'logicalboneshug' ), trackback_url( '0' ) ); ?>
 		</p>
 	<?php elseif ( !comments_open() && ( is_single() || is_page() ) ) : ?>
 		<p class="nocomments">
-			<?php _e( 'Comments are closed.', 'buddypress' ); ?>
+			<?php _e( 'Comments are closed.', 'logicalboneshug' ); ?>
 		</p>
 	<?php endif; ?>
 <?php if ( comments_open() ) : ?>

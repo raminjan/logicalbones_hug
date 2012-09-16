@@ -59,7 +59,7 @@ function bp_dtheme_show_notice() {
 	?>
 
 	<div id="message" class="updated fade">
-		<p><?php printf( __( 'Theme activated! This theme contains <a href="%s">custom header image</a> support and <a href="%s">sidebar widgets</a>.', 'buddypress' ), admin_url( 'themes.php?page=custom-header' ), admin_url( 'widgets.php' ) ); ?></p>
+		<p><?php printf( __( 'Theme activated! This theme contains <a href="%s">custom header image</a> support and <a href="%s">sidebar widgets</a>.', 'logicalboneshug' ), admin_url( 'themes.php?page=custom-header' ), admin_url( 'widgets.php' ) ); ?></p>
 	</div>
 
 	<style type="text/css">#message2, #message0 { display: none; }</style>
@@ -83,11 +83,11 @@ function bp_dtheme_comment_form( $default_labels ) {
 	$req       = get_option( 'require_name_email' );
 	$aria_req  = ( $req ? " aria-required='true'" : '' );
 	$fields    =  array(
-		'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Name', 'buddypress' ) . ( $req ? '<span class="required"> *</span>' : '' ) . '</label> ' .
+		'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Name', 'logicalboneshug' ) . ( $req ? '<span class="required"> *</span>' : '' ) . '</label> ' .
 		            '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',
-		'email'  => '<p class="comment-form-email"><label for="email">' . __( 'Email', 'buddypress' ) . ( $req ? '<span class="required"> *</span>' : '' ) . '</label> ' .
+		'email'  => '<p class="comment-form-email"><label for="email">' . __( 'Email', 'logicalboneshug' ) . ( $req ? '<span class="required"> *</span>' : '' ) . '</label> ' .
 		            '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>',
-		'url'    => '<p class="comment-form-url"><label for="url">' . __( 'Website', 'buddypress' ) . '</label>' .
+		'url'    => '<p class="comment-form-url"><label for="url">' . __( 'Website', 'logicalboneshug' ) . '</label>' .
 		            '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>',
 	);
 
@@ -95,8 +95,8 @@ function bp_dtheme_comment_form( $default_labels ) {
 		'comment_field'  => '<p class="form-textarea"><textarea name="comment" id="comment" cols="60" rows="10" aria-required="true"></textarea></p>',
 		'fields'         => apply_filters( 'comment_form_default_fields', $fields ),
 		'logged_in_as'   => '',
-		'must_log_in'    => '<p class="alert">' . sprintf( __( 'You must be <a href="%1$s">logged in</a> to post a comment.', 'buddypress' ), wp_login_url( get_permalink() ) )	. '</p>',
-		'title_reply'    => __( 'Leave a reply', 'buddypress' )
+		'must_log_in'    => '<p class="alert">' . sprintf( __( 'You must be <a href="%1$s">logged in</a> to post a comment.', 'logicalboneshug' ), wp_login_url( get_permalink() ) )	. '</p>',
+		'title_reply'    => __( 'Leave a reply', 'logicalboneshug' )
 	);
 
 	return apply_filters( 'bp_dtheme_comment_form', array_merge( $default_labels, $new_labels ) );

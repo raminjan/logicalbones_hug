@@ -31,7 +31,7 @@ function logicalboneshug_build() {
 	// Language set up
 	load_theme_textdomain('logicalboneshug', get_template_directory() . '/languages/');
 	
-	add_theme_support( 'buddypress' );
+	add_theme_support( 'logicalboneshug' );
 	
 	add_theme_support( 'bp-default-responsive' );
 
@@ -110,16 +110,16 @@ function logicalboneshug_load_scripts() {
 
 	// Add words that we need to use in JS to the end of the page so they can be translated and still used.
 	$params = array(
-		'my_favs'           => __( 'My Favorites', 'buddypress' ),
-		'accepted'          => __( 'Accepted', 'buddypress' ),
-		'rejected'          => __( 'Rejected', 'buddypress' ),
-		'show_all_comments' => __( 'Show all comments for this thread', 'buddypress' ),
-		'show_all'          => __( 'Show all', 'buddypress' ),
-		'comments'          => __( 'comments', 'buddypress' ),
-		'close'             => __( 'Close', 'buddypress' ),
-		'view'              => __( 'View', 'buddypress' ),
-		'mark_as_fav'	    => __( 'Favorite', 'buddypress' ),
-		'remove_fav'	    => __( 'Remove Favorite', 'buddypress' )
+		'my_favs'           => __( 'My Favorites', 'logicalboneshug' ),
+		'accepted'          => __( 'Accepted', 'logicalboneshug' ),
+		'rejected'          => __( 'Rejected', 'logicalboneshug' ),
+		'show_all_comments' => __( 'Show all comments for this thread', 'logicalboneshug' ),
+		'show_all'          => __( 'Show all', 'logicalboneshug' ),
+		'comments'          => __( 'comments', 'logicalboneshug' ),
+		'close'             => __( 'Close', 'logicalboneshug' ),
+		'view'              => __( 'View', 'logicalboneshug' ),
+		'mark_as_fav'	    => __( 'Favorite', 'logicalboneshug' ),
+		'remove_fav'	    => __( 'Remove Favorite', 'logicalboneshug' )
 	);
 	wp_localize_script( 'dtheme-ajax-js', 'BP_DTheme', $params );
 	

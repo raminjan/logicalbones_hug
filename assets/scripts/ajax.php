@@ -260,7 +260,7 @@ function bp_dtheme_post_update() {
 		exit( '-1' );
 
 	if ( empty( $_POST['content'] ) )
-		exit( '-1<div id="message" class="error"><p>' . __( 'Please enter some content to post.', 'buddypress' ) . '</p></div>' );
+		exit( '-1<div id="message" class="error"><p>' . __( 'Please enter some content to post.', 'logicalboneshug' ) . '</p></div>' );
 
 	$activity_id = 0;
 	if ( empty( $_POST['object'] ) && bp_is_active( 'activity' ) ) {
@@ -275,7 +275,7 @@ function bp_dtheme_post_update() {
 	}
 
 	if ( empty( $activity_id ) )
-		exit( '-1<div id="message" class="error"><p>' . __( 'There was a problem posting your update, please try again.', 'buddypress' ) . '</p></div>' );
+		exit( '-1<div id="message" class="error"><p>' . __( 'There was a problem posting your update, please try again.', 'logicalboneshug' ) . '</p></div>' );
 
 	if ( bp_has_activities ( 'include=' . $activity_id ) ) {
 		while ( bp_activities() ) {
@@ -308,10 +308,10 @@ function bp_dtheme_new_activity_comment() {
 		exit( '-1' );
 
 	if ( empty( $_POST['content'] ) )
-		exit( '-1<div id="message" class="error"><p>' . __( 'Please do not leave the comment area blank.', 'buddypress' ) . '</p></div>' );
+		exit( '-1<div id="message" class="error"><p>' . __( 'Please do not leave the comment area blank.', 'logicalboneshug' ) . '</p></div>' );
 
 	if ( empty( $_POST['form_id'] ) || empty( $_POST['comment_id'] ) || ! is_numeric( $_POST['form_id'] ) || ! is_numeric( $_POST['comment_id'] ) )
-		exit( '-1<div id="message" class="error"><p>' . __( 'There was an error posting that reply, please try again.', 'buddypress' ) . '</p></div>' );
+		exit( '-1<div id="message" class="error"><p>' . __( 'There was an error posting that reply, please try again.', 'logicalboneshug' ) . '</p></div>' );
 
 	$comment_id = bp_activity_new_comment( array(
 		'activity_id' => $_POST['form_id'],
@@ -320,7 +320,7 @@ function bp_dtheme_new_activity_comment() {
 	) );
 
 	if ( ! $comment_id )
-		exit( '-1<div id="message" class="error"><p>' . __( 'There was an error posting that reply, please try again.', 'buddypress' ) . '</p></div>' );
+		exit( '-1<div id="message" class="error"><p>' . __( 'There was an error posting that reply, please try again.', 'logicalboneshug' ) . '</p></div>' );
 
 	// Load the new activity item into the $activities_template global
 	bp_has_activities( 'display_comments=stream&hide_spam=false&include=' . $comment_id );
@@ -376,7 +376,7 @@ function bp_dtheme_delete_activity() {
 	do_action( 'bp_activity_before_action_delete_activity', $activity->id, $activity->user_id );
 
 	if ( ! bp_activity_delete( array( 'id' => $activity->id, 'user_id' => $activity->user_id ) ) )
-		exit( '-1<div id="message" class="error"><p>' . __( 'There was a problem when deleting. Please try again.', 'buddypress' ) . '</p></div>' );
+		exit( '-1<div id="message" class="error"><p>' . __( 'There was a problem when deleting. Please try again.', 'logicalboneshug' ) . '</p></div>' );
 
 	do_action( 'bp_activity_action_delete_activity', $activity->id, $activity->user_id );
 	exit;
@@ -412,7 +412,7 @@ function bp_dtheme_delete_activity_comment() {
 	do_action( 'bp_activity_before_action_delete_activity', $_POST['id'], $comment->user_id );
 
 	if ( ! bp_activity_delete_comment( $comment->item_id, $comment->id ) )
-		exit( '-1<div id="message" class="error"><p>' . __( 'There was a problem when deleting. Please try again.', 'buddypress' ) . '</p></div>' );
+		exit( '-1<div id="message" class="error"><p>' . __( 'There was a problem when deleting. Please try again.', 'logicalboneshug' ) . '</p></div>' );
 
 	do_action( 'bp_activity_action_delete_activity', $_POST['id'], $comment->user_id );
 	exit;
@@ -475,9 +475,9 @@ function bp_dtheme_mark_activity_favorite() {
 		return;
 
 	if ( bp_activity_add_user_favorite( $_POST['id'] ) )
-		_e( 'Remove Favorite', 'buddypress' );
+		_e( 'Remove Favorite', 'logicalboneshug' );
 	else
-		_e( 'Favorite', 'buddypress' );
+		_e( 'Favorite', 'logicalboneshug' );
 
 	exit;
 }
@@ -494,9 +494,9 @@ function bp_dtheme_unmark_activity_favorite() {
 		return;
 
 	if ( bp_activity_remove_user_favorite( $_POST['id'] ) )
-		_e( 'Favorite', 'buddypress' );
+		_e( 'Favorite', 'logicalboneshug' );
 	else
-		_e( 'Remove Favorite', 'buddypress' );
+		_e( 'Remove Favorite', 'logicalboneshug' );
 
 	exit;
 }
@@ -566,7 +566,7 @@ function bp_dtheme_ajax_invite_user() {
 		echo '<h4>' . $user->user_link . '</h4>';
 		echo '<span class="activity">' . esc_attr( $user->last_active ) . '</span>';
 		echo '<div class="action">
-				<a class="button remove" href="' . wp_nonce_url( bp_loggedin_user_domain() . bp_get_groups_slug() . '/' . $_POST['group_id'] . '/invites/remove/' . $user->id, 'groups_invite_uninvite_user' ) . '" id="uid-' . esc_attr( $user->id ) . '">' . __( 'Remove Invite', 'buddypress' ) . '</a>
+				<a class="button remove" href="' . wp_nonce_url( bp_loggedin_user_domain() . bp_get_groups_slug() . '/' . $_POST['group_id'] . '/invites/remove/' . $user->id, 'groups_invite_uninvite_user' ) . '" id="uid-' . esc_attr( $user->id ) . '">' . __( 'Remove Invite', 'logicalboneshug' ) . '</a>
 			  </div>';
 		echo '</li>';
 		exit;
@@ -597,28 +597,28 @@ function bp_dtheme_ajax_addremove_friend() {
 		check_ajax_referer( 'friends_remove_friend' );
 
 		if ( ! friends_remove_friend( bp_loggedin_user_id(), $_POST['fid'] ) )
-			echo __( 'Friendship could not be canceled.', 'buddypress' );
+			echo __( 'Friendship could not be canceled.', 'logicalboneshug' );
 		else
-			echo '<a id="friend-' . $_POST['fid'] . '" class="add" rel="add" title="' . __( 'Add Friend', 'buddypress' ) . '" href="' . wp_nonce_url( bp_loggedin_user_domain() . bp_get_friends_slug() . '/add-friend/' . $_POST['fid'], 'friends_add_friend' ) . '">' . __( 'Add Friend', 'buddypress' ) . '</a>';
+			echo '<a id="friend-' . $_POST['fid'] . '" class="add" rel="add" title="' . __( 'Add Friend', 'logicalboneshug' ) . '" href="' . wp_nonce_url( bp_loggedin_user_domain() . bp_get_friends_slug() . '/add-friend/' . $_POST['fid'], 'friends_add_friend' ) . '">' . __( 'Add Friend', 'logicalboneshug' ) . '</a>';
 
 	} elseif ( 'not_friends' == BP_Friends_Friendship::check_is_friend( bp_loggedin_user_id(), $_POST['fid'] ) ) {
 		check_ajax_referer( 'friends_add_friend' );
 
 		if ( ! friends_add_friend( bp_loggedin_user_id(), $_POST['fid'] ) )
-			echo __(' Friendship could not be requested.', 'buddypress' );
+			echo __(' Friendship could not be requested.', 'logicalboneshug' );
 		else
-			echo '<a id="friend-' . $_POST['fid'] . '" class="remove" rel="remove" title="' . __( 'Cancel Friendship Request', 'buddypress' ) . '" href="' . wp_nonce_url( bp_loggedin_user_domain() . bp_get_friends_slug() . '/requests/cancel/' . (int) $_POST['fid'] . '/', 'friends_withdraw_friendship' ) . '" class="requested">' . __( 'Cancel Friendship Request', 'buddypress' ) . '</a>';
+			echo '<a id="friend-' . $_POST['fid'] . '" class="remove" rel="remove" title="' . __( 'Cancel Friendship Request', 'logicalboneshug' ) . '" href="' . wp_nonce_url( bp_loggedin_user_domain() . bp_get_friends_slug() . '/requests/cancel/' . (int) $_POST['fid'] . '/', 'friends_withdraw_friendship' ) . '" class="requested">' . __( 'Cancel Friendship Request', 'logicalboneshug' ) . '</a>';
 
 	} elseif ( 'pending' == BP_Friends_Friendship::check_is_friend( bp_loggedin_user_id(), (int) $_POST['fid'] ) ) {		
 		check_ajax_referer( 'friends_withdraw_friendship' );
 
 		if ( friends_withdraw_friendship( bp_loggedin_user_id(), (int) $_POST['fid'] ) )
-			echo '<a id="friend-' . $_POST['fid'] . '" class="add" rel="add" title="' . __( 'Add Friend', 'buddypress' ) . '" href="' . wp_nonce_url( bp_loggedin_user_domain() . bp_get_friends_slug() . '/add-friend/' . $_POST['fid'], 'friends_add_friend' ) . '">' . __( 'Add Friend', 'buddypress' ) . '</a>';
+			echo '<a id="friend-' . $_POST['fid'] . '" class="add" rel="add" title="' . __( 'Add Friend', 'logicalboneshug' ) . '" href="' . wp_nonce_url( bp_loggedin_user_domain() . bp_get_friends_slug() . '/add-friend/' . $_POST['fid'], 'friends_add_friend' ) . '">' . __( 'Add Friend', 'logicalboneshug' ) . '</a>';
 		else
-			echo __("Friendship request could not be cancelled.", 'buddypress');
+			echo __("Friendship request could not be cancelled.", 'logicalboneshug');
 
 	} else {
-		echo __( 'Request Pending', 'buddypress' );
+		echo __( 'Request Pending', 'logicalboneshug' );
 	}
 
 	exit;
@@ -638,7 +638,7 @@ function bp_dtheme_ajax_accept_friendship() {
 	check_admin_referer( 'friends_accept_friendship' );
 
 	if ( ! friends_accept_friendship( $_POST['id'] ) )
-		echo "-1<div id='message' class='error'><p>" . __( 'There was a problem accepting that request. Please try again.', 'buddypress' ) . '</p></div>';
+		echo "-1<div id='message' class='error'><p>" . __( 'There was a problem accepting that request. Please try again.', 'logicalboneshug' ) . '</p></div>';
 
 	exit;
 }
@@ -657,7 +657,7 @@ function bp_dtheme_ajax_reject_friendship() {
 	check_admin_referer( 'friends_reject_friendship' );
 
 	if ( ! friends_reject_friendship( $_POST['id'] ) )
-		echo "-1<div id='message' class='error'><p>" . __( 'There was a problem rejecting that request. Please try again.', 'buddypress' ) . '</p></div>';
+		echo "-1<div id='message' class='error'><p>" . __( 'There was a problem rejecting that request. Please try again.', 'logicalboneshug' ) . '</p></div>';
 
 	exit;
 }
@@ -684,28 +684,28 @@ function bp_dtheme_ajax_joinleave_group() {
 			check_ajax_referer( 'groups_join_group' );
 
 			if ( ! groups_join_group( $group->id ) )
-				_e( 'Error joining group', 'buddypress' );
+				_e( 'Error joining group', 'logicalboneshug' );
 			else
-				echo '<a id="group-' . esc_attr( $group->id ) . '" class="leave-group" rel="leave" title="' . __( 'Leave Group', 'buddypress' ) . '" href="' . wp_nonce_url( bp_get_group_permalink( $group ) . 'leave-group', 'groups_leave_group' ) . '">' . __( 'Leave Group', 'buddypress' ) . '</a>';
+				echo '<a id="group-' . esc_attr( $group->id ) . '" class="leave-group" rel="leave" title="' . __( 'Leave Group', 'logicalboneshug' ) . '" href="' . wp_nonce_url( bp_get_group_permalink( $group ) . 'leave-group', 'groups_leave_group' ) . '">' . __( 'Leave Group', 'logicalboneshug' ) . '</a>';
 
 		} elseif ( 'private' == $group->status ) {
 			check_ajax_referer( 'groups_request_membership' );
 
 			if ( ! groups_send_membership_request( bp_loggedin_user_id(), $group->id ) )
-				_e( 'Error requesting membership', 'buddypress' );
+				_e( 'Error requesting membership', 'logicalboneshug' );
 			else
-				echo '<a id="group-' . esc_attr( $group->id ) . '" class="membership-requested" rel="membership-requested" title="' . __( 'Membership Requested', 'buddypress' ) . '" href="' . bp_get_group_permalink( $group ) . '">' . __( 'Membership Requested', 'buddypress' ) . '</a>';
+				echo '<a id="group-' . esc_attr( $group->id ) . '" class="membership-requested" rel="membership-requested" title="' . __( 'Membership Requested', 'logicalboneshug' ) . '" href="' . bp_get_group_permalink( $group ) . '">' . __( 'Membership Requested', 'logicalboneshug' ) . '</a>';
 		}
 
 	} else {
 		check_ajax_referer( 'groups_leave_group' );
 
 		if ( ! groups_leave_group( $group->id ) )
-			_e( 'Error leaving group', 'buddypress' );
+			_e( 'Error leaving group', 'logicalboneshug' );
 		elseif ( 'public' == $group->status )
-			echo '<a id="group-' . esc_attr( $group->id ) . '" class="join-group" rel="join" title="' . __( 'Join Group', 'buddypress' ) . '" href="' . wp_nonce_url( bp_get_group_permalink( $group ) . 'join', 'groups_join_group' ) . '">' . __( 'Join Group', 'buddypress' ) . '</a>';
+			echo '<a id="group-' . esc_attr( $group->id ) . '" class="join-group" rel="join" title="' . __( 'Join Group', 'logicalboneshug' ) . '" href="' . wp_nonce_url( bp_get_group_permalink( $group ) . 'join', 'groups_join_group' ) . '">' . __( 'Join Group', 'logicalboneshug' ) . '</a>';
 		elseif ( 'private' == $group->status )
-			echo '<a id="group-' . esc_attr( $group->id ) . '" class="request-membership" rel="join" title="' . __( 'Request Membership', 'buddypress' ) . '" href="' . wp_nonce_url( bp_get_group_permalink( $group ) . 'request-membership', 'groups_send_membership_request' ) . '">' . __( 'Request Membership', 'buddypress' ) . '</a>';
+			echo '<a id="group-' . esc_attr( $group->id ) . '" class="request-membership" rel="join" title="' . __( 'Request Membership', 'logicalboneshug' ) . '" href="' . wp_nonce_url( bp_get_group_permalink( $group ) . 'request-membership', 'groups_send_membership_request' ) . '">' . __( 'Request Membership', 'logicalboneshug' ) . '</a>';
 	}
 
 	exit;
@@ -723,7 +723,7 @@ function bp_dtheme_ajax_close_notice() {
 		return;
 
 	if ( ! isset( $_POST['notice_id'] ) ) {
-		echo "-1<div id='message' class='error'><p>" . __( 'There was a problem closing the notice.', 'buddypress' ) . '</p></div>';
+		echo "-1<div id='message' class='error'><p>" . __( 'There was a problem closing the notice.', 'logicalboneshug' ) . '</p></div>';
 
 	} else {
 		$user_id      = get_current_user_id();
@@ -757,7 +757,7 @@ function bp_dtheme_ajax_messages_send_reply() {
 				<?php do_action( 'bp_before_message_meta' ); ?>
 				<?php echo bp_loggedin_user_avatar( 'type=thumb&width=30&height=30' ); ?>
 
-				<strong><a href="<?php echo bp_loggedin_user_domain(); ?>"><?php bp_loggedin_user_fullname(); ?></a> <span class="activity"><?php printf( __( 'Sent %s', 'buddypress' ), bp_core_time_since( bp_core_current_time() ) ); ?></span></strong>
+				<strong><a href="<?php echo bp_loggedin_user_domain(); ?>"><?php bp_loggedin_user_fullname(); ?></a> <span class="activity"><?php printf( __( 'Sent %s', 'logicalboneshug' ), bp_core_time_since( bp_core_current_time() ) ); ?></span></strong>
 
 				<?php do_action( 'bp_after_message_meta' ); ?>
 			</div>
@@ -774,7 +774,7 @@ function bp_dtheme_ajax_messages_send_reply() {
 		</div>
 	<?php
 	} else {
-		echo "-1<div id='message' class='error'><p>" . __( 'There was a problem sending that reply. Please try again.', 'buddypress' ) . '</p></div>';
+		echo "-1<div id='message' class='error'><p>" . __( 'There was a problem sending that reply. Please try again.', 'logicalboneshug' ) . '</p></div>';
 	}
 
 	exit;
@@ -792,7 +792,7 @@ function bp_dtheme_ajax_message_markunread() {
 		return;
 
 	if ( ! isset($_POST['thread_ids']) ) {
-		echo "-1<div id='message' class='error'><p>" . __( 'There was a problem marking messages as unread.', 'buddypress' ) . '</p></div>';
+		echo "-1<div id='message' class='error'><p>" . __( 'There was a problem marking messages as unread.', 'logicalboneshug' ) . '</p></div>';
 
 	} else {
 		$thread_ids = explode( ',', $_POST['thread_ids'] );
@@ -817,7 +817,7 @@ function bp_dtheme_ajax_message_markread() {
 		return;
 
 	if ( ! isset($_POST['thread_ids']) ) {
-		echo "-1<div id='message' class='error'><p>" . __('There was a problem marking messages as read.', 'buddypress' ) . '</p></div>';
+		echo "-1<div id='message' class='error'><p>" . __('There was a problem marking messages as read.', 'logicalboneshug' ) . '</p></div>';
 
 	} else {
 		$thread_ids = explode( ',', $_POST['thread_ids'] );
@@ -842,7 +842,7 @@ function bp_dtheme_ajax_messages_delete() {
 		return;
 
 	if ( ! isset($_POST['thread_ids']) ) {
-		echo "-1<div id='message' class='error'><p>" . __( 'There was a problem deleting messages.', 'buddypress' ) . '</p></div>';
+		echo "-1<div id='message' class='error'><p>" . __( 'There was a problem deleting messages.', 'logicalboneshug' ) . '</p></div>';
 
 	} else {
 		$thread_ids = explode( ',', $_POST['thread_ids'] );
@@ -850,7 +850,7 @@ function bp_dtheme_ajax_messages_delete() {
 		for ( $i = 0, $count = count( $thread_ids ); $i < $count; ++$i )
 			BP_Messages_Thread::delete($thread_ids[$i]);
 
-		_e( 'Messages deleted.', 'buddypress' );
+		_e( 'Messages deleted.', 'logicalboneshug' );
 	}
 
 	exit;

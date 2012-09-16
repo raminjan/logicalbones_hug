@@ -7,7 +7,7 @@
  * @since logicalbones 1.0
  */
 
-get_header( 'buddypress' ); ?>
+get_header( 'logicalboneshug' ); ?>
 
 	
 	<div id="primary" class="main-content">
@@ -75,5 +75,5 @@ get_header( 'buddypress' ); ?>
 		</div>
 	</div><!-- #content -->
 
-<?php get_sidebar( 'buddypress' ); ?>
-<?php get_footer( 'buddypress' ); ?>
+<?php get_sidebar( 'logicalboneshug' ); ?>
+<?php get_footer( 'logicalboneshug' ); ?>
