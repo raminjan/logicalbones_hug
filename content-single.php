@@ -12,9 +12,8 @@
 		<h1 class="post-title"><?php the_title(); ?></h1>
 	</header>
 	<div class="post-body">
-		<?php echo wp_get_attachment_image( $post->ID, 'large', false, array( 'class' => 'size-large aligncenter' ) ); ?>
-		<div class="post-caption"><?php if ( !empty( $post->post_excerpt ) ) the_excerpt(); ?></div>
 		<?php the_content(); ?>
+		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'testtheme' ), 'after' => '</div>' ) ); ?>
 	</div>
 	<footer class="post-meta">
 			<div class="post-meta-author">
@@ -30,24 +29,10 @@
 			</div>
 		<div class="post-date">
 			<?php echo get_the_date(); ?></div>
-				<?php if ( comments_open() && ! post_password_required() ) : ?>
+			<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 			<div class="comments-link">
 				<?php comments_popup_link( __( '<span class="leave-reply">Comment</span>', 'logicalboneshug'), __( '1 Comment', 'logicalboneshug'), __( '% Comments', 'logicalboneshug') ); ?>
 			</div>
-		<?php endif; ?>
-<?php
-									if ( wp_attachment_is_image() ) :
-										$metadata = wp_get_attachment_metadata();
-										printf( __( 'Full size is %s pixels', 'logicalboneshug' ),
-											sprintf( '<a href="%1$s" title="%2$s">%3$s &times; %4$s</a>',
-												wp_get_attachment_url(),
-												esc_attr( __( 'Link to full size image', 'logicalboneshug' ) ),
-												$metadata['width'],
-												$metadata['height']
-											)
-										);
-									endif;
-								?>
 			<?php edit_post_link( __( 'Edit &rarr;', 'logicalboneshug'), ' <span class="edit-link">', '</span> | ' ); ?>
 			<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'logicalboneshug'), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php _e( 'Permlink', 'logicalboneshug'); ?></a>
 	</footer>

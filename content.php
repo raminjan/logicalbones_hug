@@ -31,7 +31,7 @@
 	<?php endif; ?>
 	<footer class="post-meta">
 		<div class="post-date"><?php echo get_the_date(); ?></div>
-		<?php if ( comments_open() && ! post_password_required() ) : ?>
+		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 			<div class="comments-link">
 				<?php comments_popup_link( __( '<span class="leave-reply">Comment</span>', 'logicalboneshug'), __( '1 Comment', 'logicalboneshug'), __( '% Comments', 'logicalboneshug') ); ?>
 			</div>
