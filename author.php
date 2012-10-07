@@ -8,7 +8,7 @@
 ?>
 <?php get_header('signup'); ?>
 <div id="primary" class="main-content">
-	<div id="content" class="clearfix">
+	<div id="content">
 		<div id="author-archives" role="main">
 		<?php	if ( have_posts() ) the_post();?>
 		<header class="post-header">

@@ -8,7 +8,7 @@
 ?>
 <?php get_header(); ?>
 <div id="primary" class="main-content">
-	<div id="content" class="clearfix">
+	<div id="content">
 		<div id="latest" role="main">
 		<?php if ( have_posts() ) : ?>
 			<?php while ( have_posts() ) : the_post(); 

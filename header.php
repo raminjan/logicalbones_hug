@@ -23,7 +23,7 @@
 <body <?php body_class() ?> id="logicalbones_hug">
 	<div id="site-wrapper">
 	<?php do_action( 'bp_before_header' ); ?>
-		<header id="branding" role="banner" class="wrapper clearfix">
+		<header id="branding" role="banner" class="wrapper">
 				<a href="<?php echo site_url(); ?>"><h1><!-- name of site --></h1></a>
 				<nav id="top-nav" role="navigation">
 					<h3 class="assistive-text"><?php _e( 'Menu', 'logicalboneshug' ); ?></h3>
@@ -52,4 +52,4 @@
 		</header>
 		<?php do_action( 'bp_after_header'     ); ?>
 		<?php do_action( 'bp_before_container' ); ?>
-		<div id="main-wrapper" class="inner-wrapper clearfix">
+		<div id="main-wrapper" class="inner-wrapper">
